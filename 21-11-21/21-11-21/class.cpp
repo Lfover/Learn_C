@@ -1,19 +1,42 @@
 #include <iostream>
 #include <Windows.h>
+#include <assert.h>
 using namespace std;
 #pragma warning(disable:4996)
-int my_islower(char c){
-	return c >= 97 && c <= 122;
-}
-int my_toupper(char c)
+//int my_islower(char c){
+//	return c >= 97 && c <= 122;
+//}
+//int my_toupper(char c)
+//{
+//	return my_islower(c) ? c - 32 : c;
+//}
+void *my_memmove(void *dst, void *src, size_t num)
 {
-	return my_islower(c) ? c - 32 : c;
+	assert(dst != NULL);
+	assert(src != NULL);
+	const char*src_p = (char*)src;
+	char *dst_p = (char*)dst;
+	while (num > 0){
+		*dst_p = *src_p;
+		dst_p++;
+		src_p++;
+		num--;
+	}
+	return dst;
 }
+
 int main()
 {
-	int src[5] = { 11, 22, 33, 44, 55 };
-	int dst[5];
-	memcpy(dst, src, sizeof(src));
+	char str[32] = "abcdefg123456";
+	int len = strlen(str);
+	char dst[32];
+	my_memmove(dst, str, len + 1);
+
+
+
+	//int src[5] = { 11, 22, 33, 44, 55 };
+	//int dst[5];
+	//memcpy(dst, src, sizeof(src));
 	//char str[] = "This Is A String";
 	//int len = strlen(str);
 	//for (int i = 0; i < len; i++){
