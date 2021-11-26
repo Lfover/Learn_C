@@ -33,7 +33,7 @@ int my_atoi(const char *str){
 }
 int main()
 {
-	const char *str = "  1a2b345";
+	const char *str = "  12345";
 	int res = my_atoi(str);
 	printf("%d %d",status, res);
 	system("pause");
