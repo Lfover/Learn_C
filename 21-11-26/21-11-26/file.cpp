@@ -4,7 +4,7 @@
 int main()
 {
 
-	FILE*fp = fopen("log.txt","r");
+	FILE *fp = fopen("log.txt","r");
 	if (fp == NULL){
 		perror("fopen");
 		return 1;
