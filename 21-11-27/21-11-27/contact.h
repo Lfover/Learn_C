@@ -1,6 +1,7 @@
 #ifndef _CINTACT_H_
 #define _CONTACT_H_
-
+//文件信息
+#define SAVE_FILE "save.txt"
 //person 内部的元素的大小
 #define NAME_SIZE 32
 #define SEX_SIZE 8
